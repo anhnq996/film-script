@@ -114,6 +114,15 @@ def cut_with_ffmpeg(
         raise RuntimeError(f"ffmpeg lỗi với mã thoát {proc.returncode}")
 
 
+def build_ytdlp_extra_args() -> list[str]:
+    extra: list[str] = []
+    if shutil.which("deno"):
+        extra.extend(["--js-runtimes", "deno", "--remote-components", "ejs:github"])
+    elif shutil.which("node"):
+        extra.extend(["--js-runtimes", "node", "--remote-components", "ejs:github"])
+    return extra
+
+
 def download_and_cut_url(
     url: str,
     output_wav: Path,
@@ -121,17 +130,25 @@ def download_and_cut_url(
     duration_sec: int,
     sample_rate: int,
     channels: int,
+    lang: str = "vi",
     cookies: str | None = None,
     cookies_from_browser: str | None = None,
 ) -> None:
     require_binary("yt-dlp", "pip install -U yt-dlp")
     require_binary("ffmpeg", "sudo apt-get install -y ffmpeg")
 
-    auth_args: list[str] = []
+    auth_args: list[str] = build_ytdlp_extra_args()
     if cookies:
         auth_args.extend(["--cookies", cookies])
     if cookies_from_browser:
         auth_args.extend(["--cookies-from-browser", cookies_from_browser])
+
+    # Ưu tiên bản tiếng gốc (tránh bị YouTube tự chọn bản lồng tiếng AI en-US)
+    fmt_selector = (
+        f"bestaudio[language^={lang}]/bestaudio[format_note*=original]/bestaudio/best"
+        if lang
+        else "bestaudio[format_note*=original]/bestaudio/best"
+    )
 
     end_sec = start_sec + duration_sec
     section_spec = f"*{format_seconds_hms(start_sec)}-{format_seconds_hms(end_sec)}"
@@ -140,11 +157,11 @@ def download_and_cut_url(
         tmp_template = str(Path(tmpdir) / "raw.%(ext)s")
 
         # Ưu tiên tải đúng đoạn 20 phút bằng --download-sections cho nhanh
-        print(f"[1/2] Đang tải đoạn audio {section_spec} từ URL...")
+        print(f"[1/2] Đang tải đoạn audio {section_spec} (format: {fmt_selector}) từ URL...")
         section_cmd = [
             "yt-dlp",
             "-f",
-            "bestaudio/best",
+            fmt_selector,
             "--no-playlist",
             "--download-sections",
             section_spec,
@@ -163,7 +180,7 @@ def download_and_cut_url(
             full_cmd = [
                 "yt-dlp",
                 "-f",
-                "bestaudio/best",
+                fmt_selector,
                 "--no-playlist",
                 "-o",
                 tmp_template,
@@ -244,6 +261,11 @@ def main() -> int:
         choices=(1, 2),
         help="Số kênh âm thanh (mặc định: 2 stereo để Demucs tách vocal sạch nhất)",
     )
+    parser.add_argument(
+        "--lang",
+        default="vi",
+        help="Mã ngôn ngữ track âm thanh gốc muốn ưu tiên (mặc định: vi, tránh bản lồng tiếng tự động)",
+    )
     parser.add_argument("--cookies", default=None, help="Đường dẫn file cookies.txt cho yt-dlp")
     parser.add_argument(
         "--cookies-from-browser",
@@ -279,6 +301,7 @@ def main() -> int:
             duration_sec=duration_sec,
             sample_rate=args.sample_rate,
             channels=args.channels,
+            lang=args.lang,
             cookies=args.cookies,
             cookies_from_browser=args.cookies_from_browser,
         )

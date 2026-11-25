@@ -2,3 +2,7 @@ __pycache__/
 *.py[cod]
 .venv/
 .DS_Store
+*.wav
+*.m4a
+*.mp3
+
