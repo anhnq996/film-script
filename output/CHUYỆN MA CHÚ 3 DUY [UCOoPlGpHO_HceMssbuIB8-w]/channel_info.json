@@ -1,0 +1,24 @@
+{
+  "channel": "CHUYỆN MA CHÚ 3 DUY",
+  "channel_id": "UCOoPlGpHO_HceMssbuIB8-w",
+  "input_url": "https://www.youtube.com/@chuyenmachu3duy",
+  "canonical_url": "https://www.youtube.com/channel/UCOoPlGpHO_HceMssbuIB8-w",
+  "crawled_at": "2026-11-25T01:29:46.341294+00:00",
+  "requested_langs": "auto",
+  "playlists": [
+    {
+      "id": "PLPtNn5Hfp6Rs",
+      "title": "LINH NỮ ĐẦU THAI FULL TRUYỆN",
+      "folder": "playlists/LINH NỮ ĐẦU THAI FULL TRUYỆN",
+      "video_count": 3
+    },
+    {
+      "id": "PLOt2783j2dDE",
+      "title": "SERIES TRUYỆN MỚI NHẤT HIỆN TẠI | QUỶ NGÃI MA LAI",
+      "folder": "playlists/SERIES TRUYỆN MỚI NHẤT HIỆN TẠI QUỶ NGÃI MA LAI",
+      "video_count": 3
+    }
+  ],
+  "other_video_count": 3,
+  "unique_videos_processed": 9
+}
