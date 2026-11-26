@@ -29,6 +29,7 @@ description: >-
 | **Xây bối cảnh đời thực, thiết kế bùa ngải, luật nhân quả & nhân vật** | [03-world-folklore-realism.md](./references/03-world-folklore-realism.md) | Checklist Chốt Neo Đời Thực, ma trận luật tâm linh (hắc phù, bùa Khmer, ngải rắn/rết/nưa/ma lai, trùng tang, Kumanthong, duyên âm, đầu thai), Đạo làm thầy, 5 tuyến nhân vật. |
 | **Đẩy kịch tính, viết cảnh rùng rợn, đấu pháp & điều tiết căng thẳng** | [04-horror-and-suspense.md](./references/04-horror-and-suspense.md) | 7 điểm gợn đời thường, thang leo 5 bậc, bộ công cụ giác quan "bếp núc → nhà xác", biên đạo 4 dạng đấu pháp, chồng câu hỏi & van xả áp lực ấm áp. |
 | **Xem trích đoạn thật phân tích từng dòng & lấy khung Story Bible** | [05-annotated-examples.md](./references/05-annotated-examples.md) | 5 đoạn transcript thật (đã chuẩn hóa lỗi ASR) giải phẫu từng nhịp + Mẫu **Story Bible & Blueprint điền sẵn** cho truyện lẻ và series. |
+| **Phối hợp 4 giọng kể (180–205 WPM) & Xuất ElevenLabs v4 / TTS** | [06-multi-channel-narration-and-tts.md](./references/06-multi-channel-narration-and-tts.md) | Đối chiếu Chú Ba Duy – Nguyễn Huy – Đình Soạn – Duy Thuận, công thức 20 phút nghe đêm và chuẩn hóa thẻ `[...]` cho ElevenLabs v4. |
 
 ---
 
@@ -116,9 +117,9 @@ Thực hiện tuần tự khi viết mới hoặc chuyển thể kịch bản:
 
 ---
 
-## 4. Hai Chế Độ Xuất Bản Kịch Bản (Output Formatting Modes)
+## 4. Ba Chế Độ Xuất Bản Kịch Bản (Output Formatting Modes)
 
-Hỏi người dùng chọn (mặc định **Mode A** cho yêu cầu viết truyện/kịch bản đọc; chọn **Mode B** khi người dùng nhắc thu âm, TTS hoặc dựng video audio):
+Hỏi người dùng chọn (mặc định **Mode A** cho yêu cầu viết truyện/kịch bản đọc; chọn **Mode B** cho dựng video audio có SFX; chọn **Mode C** khi người dùng nhắc **ElevenLabs v4** hoặc đọc TTS có Audio Tags):
 
 ### Mode A — Kịch Bản Đọc Thuần (`Clean Spoken Script`)
 - Văn xuôi khẩu ngữ liền mạch, chia đoạn ngắn 3–6 câu vừa nhịp thở thu âm. Không chèn chỉ dẫn sân khấu hay tiêu đề cảnh phim (`CẢNH 1 - NỘI - ĐÊM`).
@@ -130,6 +131,12 @@ Hỏi người dùng chọn (mặc định **Mode A** cho yêu cầu viết truy
 - Chỉ chèn thẻ nhịp gọn nhẹ trong ngoặc vuông (tối đa 1–2 thẻ/đoạn): `[nhạc nền nhẹ]`, `[ngưng 1.5s]`, `[giọng hạ thấp]`, `[nhịp nhanh dần]`, `[tiếng gió / chó sủa xa]`, `[tiếng gõ cửa — cộc, cộc, cộc]`.
 - *Ví dụ chuẩn Mode B:*
   > `[nhạc nền nhẹ]` Anh Tư ảnh mới đi ruộng về, nhìn cái nồi cơm đổ nhão nhoẹt ảnh chửi ầm lên, nói đứa nào vô phá nhà tao chết mẹ tao à. `[ngưng 1s]` `[tiếng ngói vỡ chát chúa]` Ảnh mới vừa dứt câu thôi thì trên chái nhà sau, miếng ngói rớt cái độp, xắn ngang đứt phăng cọng dây bùa cậu Út cột giữa cửa. `[giọng hạ thấp]` Cả nhà đứng hình hết trơn.
+
+### Mode C — Kịch Bản ElevenLabs v4 Audio Tags (`[...]` Voice-Directed Script)
+- Chèn thẻ chỉ đạo diễn xuất **bằng tiếng Anh** trong ngoặc vuông `[...]` ngay trước câu/cụm cần đổi tông (`[warm, conversational]`, `[low, eerie]`, `[slowly, suspenseful]`, `[whispers]`, `[trembling, terrified]`, `[sighs softly]`, `[pause]`, `[long pause]`). Xem chi tiết ở [06-multi-channel-narration-and-tts.md](./references/06-multi-channel-narration-and-tts.md).
+- **Bắt buộc chuẩn hóa cho bộ đọc:** Xóa sạch ký tự `*`/`_`/`#`, viết số hiệu và chữ cái đánh vần sang âm tiếng Việt (`502` → `năm không hai`, `C - Ứ - U` → `Cờ... Ứ... U`), chỉ dùng với model `Eleven v3` / `Eleven v4`.
+- *Ví dụ chuẩn Mode C:*
+  > `[annoyed, blunt]` Anh Tư ảnh mới đi ruộng về, nhìn cái nồi cơm đổ nhão nhoẹt ảnh chửi ầm lên, nói đứa nào vô phá nhà tao chết mẹ tao à. `[pause]` `[sharp, dramatic]` Ảnh mới vừa dứt câu thôi thì trên chái nhà sau, miếng ngói rớt cái độp, xắn ngang đứt phăng cọng dây bùa cậu Út cột giữa cửa. `[long pause]` `[whispers, stunned]` Cả nhà đứng hình hết trơn.
 
 ---
 

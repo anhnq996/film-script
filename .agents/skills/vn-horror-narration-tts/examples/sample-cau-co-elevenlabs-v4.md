@@ -1,0 +1,23 @@
+# Ví Dụ Mẫu: Đồng Xu Dính Đất Huyệt (Cầu Cơ Xóm Trọ)
+
+Trích đoạn mở đầu ~5 phút (`~980` từ, nhịp đọc `~190` từ/phút), đối chiếu giữa **Mode A (Đọc thuần)** và **Mode C (ElevenLabs v4 Audio Tags)**.
+
+---
+
+## 1. Bản Mode A (Đọc thuần / Đưa vào kịch bản chính)
+
+Xin chào tất cả mọi người. Chào mừng mọi người đã quay trở lại với buổi nghe chuyện đêm khuya ngày hôm nay nha. Trước khi vô chuyện á, mình hỏi thiệt mọi người câu này nè... Hồi còn đi học hay đi ở trọ làm công nhân á, trong đám bạn của mọi người có đứa nào bày trò lấy tờ lịch cũ vẽ hai mươi bốn chữ cái, đặt cái chén sành hay đồng xu lên để chơi cầu cơ chưa? Ông bà mình hay dặn kỹ lắm, chơi bằng tờ giấy tập xé bỏ thì còn đỡ, chớ tuyệt đối đừng bao giờ lấy ván hòm mục hay đồng tiền người chết ngậm trong miệng đem về làm con cơ. Tại vì mời người khuất mặt lên thì dễ ợt à, nhưng mà tới lúc tiễn đi á, người ta đòi tiền đò bằng mạng người sống! Vậy mà có một nhóm bốn đứa công nhân dưới Bình Dương, chỉ vì túng tiền trả nợ cuối năm mà dám đem thứ cấm kỵ ngoài nghĩa địa vô phòng trọ cầu số. Rốt cuộc đêm đó thứ gì đã nằm dưới đồng xu, và tại sao sáng hôm sau ba đứa còn tỉnh, đứa nào đầu ngón trỏ cũng tróc mất miếng da lòi thịt trắng hếu? Mời mọi người cùng nghe nha.
+
+Ờ... chuyện này xảy ra hồi cuối tháng Chạp năm hai ngàn mười bốn, ngay dãy trọ mười hai phòng của bà Tư Lựu nằm sâu trong con hẻm đất đỏ gần ngã tư Bình Chuẩn, Thuận An, Bình Dương. Cái dãy trọ này lợp tôn thấp tè, ngó ra khoảng đất trống mọc đầy cỏ tranh, đi thêm chừng ba trăm mét nữa là đụng nghĩa trang cũ có hàng bạch đàn cao vút. Nhân vật chính trong chuyện là anh Khải, quê ở Chợ Mới, An Giang lên phụ đứng máy dập tôn. Lương công nhân hồi đó tăng ca muốn xỉu mới được bốn triệu rưỡi, ảnh ăn xài tằn tiện dữ lắm để cuối tháng gửi về quê cho má trị khớp. Ở ghép chung phòng số mười hai cuối dãy với ảnh là thằng Tùng, làm bên xưởng ván ép cách đó hai cây số. Thằng Tùng này tính tình xởi lởi nhưng ngặt một cái là mê đá gà với ghi đề dữ thần. Cuối năm tụi nó kết sổ sao đó mà nó thiếu người ta tới mười tám triệu tiền góp, bên cho vay người ta nhắn thẳng luôn là hai mươi tám Tết không chồng đủ tiền thì ra tới cổng công ty chặt giò.
+
+---
+
+## 2. Bản Mode C (Đã gắn Audio Tags cho ElevenLabs v4)
+
+```text
+[warm, friendly, late-night radio host speaking close to the mic] Xin chào tất cả mọi người. Chào mừng mọi người đã quay trở lại với buổi nghe chuyện đêm khuya ngày hôm nay nha. [pause] Trước khi vô chuyện á, mình hỏi thiệt mọi người câu này nè... [curious, conversational] Hồi còn đi học hay đi ở trọ làm công nhân á, trong đám bạn của mọi người có đứa nào bày trò lấy tờ lịch cũ vẽ hai mươi bốn chữ cái, đặt cái chén sành hay đồng xu lên để chơi cầu cơ chưa? [low, serious tone] Ông bà mình hay dặn kỹ lắm... chơi bằng tờ giấy tập xé bỏ thì còn đỡ, [slowly, warning tone] chớ tuyệt đối đừng bao giờ lấy ván hòm mục, hay đồng tiền người chết ngậm trong miệng đem về làm con cơ. [pause] Tại vì mời người khuất mặt lên thì dễ ợt à... [hushed, ominous] nhưng mà tới lúc tiễn đi á, người ta đòi tiền đò bằng mạng người sống! [pause] Vậy mà có một nhóm bốn đứa công nhân dưới Bình Dương, chỉ vì túng tiền trả nợ cuối năm mà dám đem thứ cấm kỵ ngoài nghĩa địa vô phòng trọ cầu số. [slowly, suspenseful] Rốt cuộc đêm đó thứ gì đã nằm dưới đồng xu... và tại sao sáng hôm sau ba đứa còn tỉnh, đứa nào đầu ngón trỏ cũng tróc mất miếng da lòi thịt trắng hếu? [pause] Mời mọi người cùng nghe nha.
+
+[sighs softly] [calm, natural storytelling pace] Ờ... chuyện này xảy ra hồi cuối tháng Chạp năm hai ngàn mười bốn, ngay dãy trọ mười hai phòng của bà Tư Lựu, nằm sâu trong con hẻm đất đỏ gần ngã tư Bình Chuẩn, Thuận An, Bình Dương. Cái dãy trọ này lợp tôn thấp tè, ngó ra khoảng đất trống mọc đầy cỏ tranh, đi thêm chừng ba trăm mét nữa là đụng nghĩa trang cũ có hàng bạch đàn cao vút. Nhân vật chính trong chuyện là anh Khải, quê ở Chợ Mới, An Giang lên phụ đứng máy dập tôn. Lương công nhân hồi đó tăng ca muốn xỉu mới được bốn triệu rưỡi, ảnh ăn xài tằn tiện dữ lắm để cuối tháng gửi về quê cho má trị khớp. Ở ghép chung phòng số mười hai cuối dãy với ảnh là thằng Tùng, làm bên xưởng ván ép cách đó hai cây số. Thằng Tùng này tính tình xởi lởi, nhưng ngặt một cái là mê đá gà với ghi đề dữ thần. Cuối năm tụi nó kết sổ sao đó mà nó thiếu người ta tới mười tám triệu tiền góp, [serious, tense] bên cho vay người ta nhắn thẳng luôn là hai mươi tám Tết không chồng đủ tiền... thì ra tới cổng công ty chặt giò.
+```
+
+*(Lưu ý: đoạn cuối khi chuyển sang chữ đánh vần `C - Ứ - U` và số `502` phải phiên âm thành `Cờ... Ứ... U` và `năm không hai` trước khi đưa vào ElevenLabs v4.)*
