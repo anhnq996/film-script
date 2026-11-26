@@ -1,0 +1,27 @@
+{
+  "video_id": "CBdn9zXx8iM",
+  "title": "CHUYỆN MA CHÚ 3 DUY | TẬP 257: OÁN HỒN TRONG HANG CUA",
+  "url": "https://www.youtube.com/watch?v=CBdn9zXx8iM",
+  "duration": 2568,
+  "upload_date": "20230524",
+  "channel": "CHUYỆN MA CHÚ 3 DUY",
+  "channel_id": "UCOoPlGpHO_HceMssbuIB8-w",
+  "has_transcript": true,
+  "languages": {
+    "en-US": {
+      "name": "English (United States) (Original)",
+      "source": "auto",
+      "cue_count": 1104,
+      "file": "en-US.txt"
+    },
+    "vi": {
+      "name": "Vietnamese (Original)",
+      "source": "auto",
+      "cue_count": 1073,
+      "file": "vi.txt"
+    }
+  },
+  "error": null,
+  "playlist": "TỔNG HỢP TẤT CẢ CHUYỆN MA THEO SỐ TẬP",
+  "playlist_id": "PLsr-60wXxJn7Uf1U1nRT4S22YSc24Kvwt"
+}

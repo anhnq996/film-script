@@ -1,0 +1,27 @@
+{
+  "video_id": "0by5hiD1Yls",
+  "title": "CHUYỆN MA CHÚ 3 DUY | CĂN TRỌ Ở ĐƯỜNG NGUYỄN VĂN LINH - CẦN THƠ #short",
+  "url": "https://www.youtube.com/watch?v=0by5hiD1Yls",
+  "duration": 15,
+  "upload_date": "20211211",
+  "channel": "CHUYỆN MA CHÚ 3 DUY",
+  "channel_id": "UCOoPlGpHO_HceMssbuIB8-w",
+  "has_transcript": true,
+  "languages": {
+    "en-US": {
+      "name": "English (United States) (Original)",
+      "source": "auto",
+      "cue_count": 8,
+      "file": "en-US.txt"
+    },
+    "vi": {
+      "name": "Vietnamese (Original)",
+      "source": "auto",
+      "cue_count": 9,
+      "file": "vi.txt"
+    }
+  },
+  "error": null,
+  "playlist": "TỔNG HỢP TẤT CẢ CHUYỆN MA THEO SỐ TẬP",
+  "playlist_id": "PLsr-60wXxJn7Uf1U1nRT4S22YSc24Kvwt"
+}

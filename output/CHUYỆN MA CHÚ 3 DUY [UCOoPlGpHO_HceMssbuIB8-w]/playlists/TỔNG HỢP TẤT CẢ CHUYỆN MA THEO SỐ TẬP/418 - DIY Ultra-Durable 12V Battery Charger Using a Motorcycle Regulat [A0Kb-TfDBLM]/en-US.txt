@@ -1,0 +1,237 @@
+Hello, greetings everyone. Do you guys
+know what this thing is? Here. This is
+actually a motorcycle charging
+regulator, everyone. The battery
+charger for bikes like the Wave or
+Dream. Something like that. So in
+today's video, I will build a 12V
+battery charging circuit from this unit
+. The advantage of this unit is that it
+charges the battery to be very durable.
+That's it, guys. You might notice that
+on your motorcycle, you can use a
+battery for years before it breaks. It
+never bulges or leaks acid or anything
+like that. In general, it lasts a long
+time. My bike has been running for 3 or
+4 years and I still haven't had to
+replace the battery. This unit charges
+the battery very well. It's a bit slow,
+but it's very effective. Uh, you can
+buy this unit at motorcycle parts shops
+. I bought this for only 40,000 VND. I
+don't know if it's genuine or a
+knockoff, but it seems quite okay to me
+. It feels quite heavy and the design
+is very sophisticated. So I think this
+one is pretty good. Next, the first
+thing is you need to buy this unit. The
+second thing is to buy this connector
+wire. Actually, you can buy this wire
+or not, it's not that important.
+Because the purpose of this wire is
+just to plug it in and connect the
+wires out. So if you don't want to
+connect wires like this, you can just
+solder them directly onto here. That's
+it. Next, we need to prepare a
+transformer. A transformer, everyone. I
+have a 3A transformer here. It provides
+multiple outputs: 0, 6, 9, 12, 15, 18,
+24V. You can use whichever one you have
+. Since I have this one, I'll use it.
+The requirement is that your
+transformer must output an AC voltage
+of 15V or higher. 15V or higher is fine
+. 12V is too low and won't fully charge
+the battery, guys. So it must be at
+least 15V or more. There you go. The
+most important components are just this
+unit and the transformer. As for this
+part, you can buy it or not, it's up to
+you. Now, I will attach this wire. This
+one has four wires. There are four
+wires, everyone. I'll set it out to
+make it easier to see. Setting it up
+will make it easier for you to
+visualize what I’m saying. It has
+four pins corresponding to four output
+wires. So, uh you should pay attention.
+Out of these four wires, we only use
+three. We leave one wire out, which is
+this yellow one. I'm discarding the
+yellow wire. You can cut it off or
+whatever you prefer. I'll just wrap it
+up to keep it neat for now. So, I'm
+ignoring the yellow wire, guys. I will
+only use these three wires. Red, white,
+and green. Among these three wires, two
+are white and green, corresponding to
+the two wires underneath. I’ll place
+it in this orientation. In this
+direction, the two bottom wires are
+white and green. They correspond to the
+, they correspond to the input voltage
+wires, guys. Meaning the wires to
+solder to the two terminals of this
+transformer. So, here I will choose the
+level, there are many levels available,
+you see. I will choose the 0V level and
+the 24V level. 18V or 15V are both fine
+, guys. 15V, 18V, or 24V all work.
+Anything above 12V is fine. But it is
+recommended to use 15V or higher. So
+here I will choose the 0V wire and the
+18V wire. Or 24V for you all. I'll try
+both later. There. So these two pins,
+these two wire colors, we will solder
+to the two transformer wires, which are
+0V and 24V. In this case, if your
+transformer has two wires, just connect
+those two here, and that's it. Now I'll
+solder it for you to see, soldering it
+right here. I will solder the first
+wire to the 24V pin. 18V is also fine,
+guys. I'll just attach it where I like.
+There. I'll attach it to 24V here. 24V.
+Then I will connect the remaining pin
+to the 0V pin of the transformer. So
+that finishes the AC connection; look
+at the two pins below, they are
+soldered to the two transformer pins.
+Next, we have the red wire left. This
+red wire corresponds to pin number 1,
+which is the wire leading to the
+terminal that clips onto the battery's
+positive pole, meaning the positive red
+pole. This wire here is to be clipped
+onto the positive terminal of the
+battery. So so here I will prepare an
+alligator clip to solder for you to see
+. I am only doing this as a
+demonstration for you to watch. When
+you do it, you should put it in a box
+to keep it neat. Here is this pin. Red
+clip here. This red clip, okay. I will
+solder it to this red wire. Done. The
+remaining pin is the negative terminal
+of the battery, which is the black one,
+so I will solder it together with this
+green wire. Here is the green wire. Pay
+attention, everyone. The positive pin
+is soldered to the red wire of this
+charger, so that is okay. As for the
+black wire, which is the battery's
+negative, we solder it to the green
+wire. Solder it directly to the green
+wire. Let me solder it here. I will
+solder it here. And that is it. Look
+here, everyone. There, I am using 3
+wires. Look carefully, everyone. It is
+just like that. These two pins are the
+220V AC input pins, as you already know
+. And that is finished. Now I just need
+to plug it in and charge the battery. I
+will take a small 12V 7Ah battery here.
+I will clip it on to test it for you to
+see. Turn on the meter. Now I will plug
+it in. I am plugging it in for you to
+see. When you plug it in and measure
+here, the output voltage will only be
+half the voltage here. Because this is
+a half-wave rectifier, you do not need
+to add anything else. Inside here, it
+already has a diode and it rectifies in
+a half-wave manner, so you don't need
+to add any more diodes. Because there
+are many videos that tell you to add
+more, but that is unnecessary, everyone
+. Unnecessary. You just connect these
+two wires directly here and that's it.
+Now, I will plug it in for you to see.
+Now, I will measure the AC voltage. Pay
+attention to the meter, everyone. I am
+measuring the AC voltage. AC voltage.
+Input AC voltage, everyone. Currently,
+it is 23 point something volts. Meaning
+24 volts. That's 23.5 V, which is about
+24V. That's it. Now for the output
+voltage. The output voltage is not
+accurate because it's half-wave
+rectified, so measuring it won't be
+precise. Let me try measuring how much
+it outputs. 12.6. Oh, so it is accurate
+? So it is accurate. That's quite okay.
+It's okay. Now I will clip the battery.
+Clip the battery for me to charge it
+for you to see. Remember to clip it
+correctly. Uh, black lead to black, red
+to red. Now, let me get the ammeter to
+measure it for you to see. Okay, DC.
+Let it return to zero. Okay, I will
+clip it here to measure the current for
+you to see. Now pay attention to the
+current, which is currently zero. Now I
+will clip the current for you to see. I
+will also measure the battery voltage
+to see what it is. The current battery
+voltage is 10.47 V, everyone. That's it
+. Now I will clip it on. Look and pay
+attention to the current on this meter.
+I am clipping it on. See that? The
+current jumps up to 1.15 A and the
+voltage here will slowly increase. It's
+at 10.8 V, everyone. 11V. It's jumping
+up slowly, everyone. 11.2 V, 11.3 V.
+11.4 V now, everyone. See that? The
+voltage is jumping up and the current
+is decreasing. The charging current is
+a little over 1A. If you want to charge
+with a higher current, you can use a
+slightly larger transformer. A slightly
+larger one will provide a higher
+current, but it will be limited by this
+component here. This unit cannot charge
+at a very high current. That means no
+matter how large a transformer you
+attach, this will only be limited to
+that level; it's not the case that
+increasing it indefinitely will keep
+increasing the output current. It is
+only limited to a certain extent. With
+this method, charging your battery will
+make it very durable. Once it's full,
+you can leave it plugged in for days or
+months and it will be fine. That’s
+because when it's full, this device
+will stop and not charge anymore. The
+excess voltage is shunted to ground, so
+it won't charge the battery anymore,
+keeping your battery very durable. Just
+think about your motorcycle battery and
+you'll know how durable it is. That's
+all there is to it. I find this method
+very simple and anyone can do it. You
+just need to buy this unit and use a
+transformer if you already have one at
+home. If you don't have one, just buy a
+transformer and you're done. The input
+voltage is also flexible. For example,
+you can connect 18V, 24V, or even 36V.
+Transformers with these types of
+voltages are very common. You might
+even find them in old equipment around
+your house. That is the most important
+part. So, I think if you have small
+batteries at home, you should use these
+chargers to keep your batteries very
+durable. And the important thing is
+that you can charge freely. You don't
+need to worry about the battery
+swelling because it will automatically
+cut off when full and stop charging.
+Alright, I would like to end the video
+here. Thank you for watching the video.
+If you found it useful, please
+subscribe to the channel to support me.
+Goodbye and see you again. Bye bye.

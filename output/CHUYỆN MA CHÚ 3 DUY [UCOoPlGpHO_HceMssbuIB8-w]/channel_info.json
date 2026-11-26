@@ -3,22 +3,154 @@
   "channel_id": "UCOoPlGpHO_HceMssbuIB8-w",
   "input_url": "https://www.youtube.com/@chuyenmachu3duy",
   "canonical_url": "https://www.youtube.com/channel/UCOoPlGpHO_HceMssbuIB8-w",
-  "crawled_at": "2026-11-25T01:29:46.341294+00:00",
+  "crawled_at": "2026-11-25T17:16:21.293391+00:00",
   "requested_langs": "auto",
   "playlists": [
     {
       "id": "PLPtNn5Hfp6Rs",
       "title": "LINH NỮ ĐẦU THAI FULL TRUYỆN",
       "folder": "playlists/LINH NỮ ĐẦU THAI FULL TRUYỆN",
-      "video_count": 3
+      "video_count": 8
     },
     {
       "id": "PLOt2783j2dDE",
       "title": "SERIES TRUYỆN MỚI NHẤT HIỆN TẠI | QUỶ NGÃI MA LAI",
       "folder": "playlists/SERIES TRUYỆN MỚI NHẤT HIỆN TẠI QUỶ NGÃI MA LAI",
-      "video_count": 3
+      "video_count": 13
+    },
+    {
+      "id": "PLL9fR0ApTmFM",
+      "title": "QUỶ NGÃI MA LAI P1",
+      "folder": "playlists/QUỶ NGÃI MA LAI P1",
+      "video_count": 7
+    },
+    {
+      "id": "PLsr-60wXxJn4YSi8Hx-kyggc3IVC6Q3Fd",
+      "title": "[THÁNG 4/2026] _ NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KÌ BÍ CÓ THẬT",
+      "folder": "playlists/[THÁNG 4 2026] _ NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KÌ BÍ CÓ THẬT",
+      "video_count": 5
+    },
+    {
+      "id": "PLsr-60wXxJn7Qs_AEA4fLZ5MQtMyb_2WD",
+      "title": "[THÁNG 3/2026] _ NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KỲ BÍ CÓ THẬT",
+      "folder": "playlists/[THÁNG 3 2026] _ NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KỲ BÍ CÓ THẬT",
+      "video_count": 8
+    },
+    {
+      "id": "PLsr-60wXxJn48DjIYwagxzTsHDc9RLW5C",
+      "title": "[THÁNG 2/2026]_NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KỲ BÍ",
+      "folder": "playlists/[THÁNG 2 2026]_NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KỲ BÍ",
+      "video_count": 9
+    },
+    {
+      "id": "PLsr-60wXxJn66z--QfEQGoH9_PDSkNQvu",
+      "title": "[THÁNG 1/2026]_NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KỲ BÍ",
+      "folder": "playlists/[THÁNG 1 2026]_NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KỲ BÍ",
+      "video_count": 9
+    },
+    {
+      "id": "PLsr-60wXxJn63zcegIM4oHM6gwa4Mo_jZ",
+      "title": "[THÁNG 1/2026]_NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KỲ BÍ",
+      "folder": "playlists/[THÁNG 1 2026]_NGHE CHÚ 3 DUY KỂ TR [PLsr-60wXxJn63zcegIM4oHM6gwa4Mo_jZ]",
+      "video_count": 9
+    },
+    {
+      "id": "PLsr-60wXxJn5sCSjabwo2nDGX5AGLAuAq",
+      "title": "[THÁNG 2/2026]_NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KỲ BÍ",
+      "folder": "playlists/[THÁNG 2 2026]_NGHE CHÚ 3 DUY KỂ TR [PLsr-60wXxJn5sCSjabwo2nDGX5AGLAuAq]",
+      "video_count": 9
+    },
+    {
+      "id": "PLsr-60wXxJn6u3Chm6dhLJHMt6u8_5Fa8",
+      "title": "[THÁNG 3/2026] _ NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KỲ BÍ CÓ THẬT",
+      "folder": "playlists/[THÁNG 3 2026] _ NGHE CHÚ 3 DUY KỂ [PLsr-60wXxJn6u3Chm6dhLJHMt6u8_5Fa8]",
+      "video_count": 8
+    },
+    {
+      "id": "PLsr-60wXxJn5P_Cp7_xLqGgZ18-p_bbeq",
+      "title": "[THÁNG 4/2026] _ NGHE CHÚ 3 DUY KỂ TRUYỆN TÂM LINH KÌ BÍ CÓ THẬT",
+      "folder": "playlists/[THÁNG 4 2026] _ NGHE CHÚ 3 DUY KỂ [PLsr-60wXxJn5P_Cp7_xLqGgZ18-p_bbeq]",
+      "video_count": 5
+    },
+    {
+      "id": "PLsr-60wXxJn5b6Bsk-bvwNKrL1LqHjBSf",
+      "title": "TRUYỆN NGẮN PLL TEST",
+      "folder": "playlists/TRUYỆN NGẮN PLL TEST",
+      "video_count": 10
+    },
+    {
+      "id": "PLsr-60wXxJn4IqRtimNPmXhHL8rPC5X63",
+      "title": "[NHỮNG CÂU CHUYỆN TRÙNG TANG RỢN NGƯỜI] _ CHUYỆN MA CHÚ 3 DUY",
+      "folder": "playlists/[NHỮNG CÂU CHUYỆN TRÙNG TANG RỢN NGƯỜI] _ CHUYỆN MA CHÚ 3 DUY",
+      "video_count": 14
+    },
+    {
+      "id": "PLsr-60wXxJn698nTK9ESGobJLnc-NyqfH",
+      "title": "[FULL CÁC TẬP TRUYỆN NGẮN LẺ CHO BẠN NÀO THÍCH] _ CHUYỆN MA CHÚ 3 DUY",
+      "folder": "playlists/[FULL CÁC TẬP TRUYỆN NGẮN LẺ CHO BẠN NÀO THÍCH] _ CHUYỆN MA CHÚ 3 DUY",
+      "video_count": 6
+    },
+    {
+      "id": "PLsr-60wXxJn6Xjg4ADzZISaM7d7noTBNS",
+      "title": "[ĐẦY ĐỦ CÁC TẬP SERIES CÔ DÂU TỄ XÁC] _ CHUYỆN MA CHÚ 3 DUY",
+      "folder": "playlists/[ĐẦY ĐỦ CÁC TẬP SERIES CÔ DÂU TỄ XÁC] _ CHUYỆN MA CHÚ 3 DUY",
+      "video_count": 5
+    },
+    {
+      "id": "PLsr-60wXxJn7PquJHS7OUgbLh26ICFArA",
+      "title": "[ĐẦY ĐỦ SERIES XÀ TINH KHƠ ME ĐỎ] _ CHUYỆN MA CHÚ 3 DUY",
+      "folder": "playlists/[ĐẦY ĐỦ SERIES XÀ TINH KHƠ ME ĐỎ] _ CHUYỆN MA CHÚ 3 DUY",
+      "video_count": 11
+    },
+    {
+      "id": "PLsr-60wXxJn64QFuXedq7YsIRJEnWYElV",
+      "title": "[THẦY THẤT _ THẦY 6 LIÊM _ ANH CƯỜNG] _ CHUYỆN MA CHÚ 3 DUY",
+      "folder": "playlists/[THẦY THẤT _ THẦY 6 LIÊM _ ANH CƯỜNG] _ CHUYỆN MA CHÚ 3 DUY",
+      "video_count": 16
+    },
+    {
+      "id": "PLsr-60wXxJn4OTK9Gcow5Yo3uuzkiNwl6",
+      "title": "[TUYỂN TẬP TRUYỆN VỀ KUMANTHONG] _ CHUYỆN MA CHÚ 3 DUY",
+      "folder": "playlists/[TUYỂN TẬP TRUYỆN VỀ KUMANTHONG] _ CHUYỆN MA CHÚ 3 DUY",
+      "video_count": 8
+    },
+    {
+      "id": "PLsr-60wXxJn6R8bYbxDfg5wWuW9eUW7VF",
+      "title": "BÁO THÙ ÁN MẠNG",
+      "folder": "playlists/BÁO THÙ ÁN MẠNG",
+      "video_count": 4
+    },
+    {
+      "id": "PLsr-60wXxJn53KxwPb-h4emgBYKPxmybM",
+      "title": "MÁU HẬN TÌNH THÙ",
+      "folder": "playlists/MÁU HẬN TÌNH THÙ",
+      "video_count": 9
+    },
+    {
+      "id": "PLsr-60wXxJn7LuOCDyF6zwaeVCv0NPsyj",
+      "title": "Xóm Trọ Tà Linh Nhi",
+      "folder": "playlists/Xóm Trọ Tà Linh Nhi",
+      "video_count": 6
+    },
+    {
+      "id": "PLsr-60wXxJn4xCBWt2Kf_0Pu7mFMKb_UI",
+      "title": "BỤI ĐỜI XÓM QUỶ",
+      "folder": "playlists/BỤI ĐỜI XÓM QUỶ",
+      "video_count": 5
+    },
+    {
+      "id": "PLsr-60wXxJn5PzBTrSvJ_9PSUKDMSNyRi",
+      "title": "[THẦY 7 HÀNH PHÁP] _ CHUYỆN MA CHÚ 3 DUY",
+      "folder": "playlists/[THẦY 7 HÀNH PHÁP] _ CHUYỆN MA CHÚ 3 DUY",
+      "video_count": 20
+    },
+    {
+      "id": "PLsr-60wXxJn7Uf1U1nRT4S22YSc24Kvwt",
+      "title": "TỔNG HỢP TẤT CẢ CHUYỆN MA THEO SỐ TẬP",
+      "folder": "playlists/TỔNG HỢP TẤT CẢ CHUYỆN MA THEO SỐ TẬP",
+      "video_count": 452
     }
   ],
-  "other_video_count": 3,
-  "unique_videos_processed": 9
+  "other_video_count": 0,
+  "unique_videos_processed": 541
 }

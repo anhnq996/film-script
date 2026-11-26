@@ -9,6 +9,7 @@ then extracts clean transcripts for every available language per video.
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import html
 import json
 import os
@@ -16,6 +17,7 @@ import re
 import shutil
 import subprocess
 import sys
+import threading
 import time
 import urllib.error
 import urllib.request
@@ -69,6 +71,19 @@ def sanitize_name(name: str, max_len: int = 90, fallback: str = "untitled") -> s
     if len(cleaned) > max_len:
         cleaned = cleaned[:max_len].rstrip(" .")
     return cleaned or fallback
+
+
+def make_video_folder_name(parent_dir: Path, v_idx: int, title: str, vid: str) -> str:
+    """Build `{v_idx:03d} - <title> [<vid>]` respecting Windows MAX_PATH limits."""
+    prefix = f"{v_idx:03d} - "
+    suffix = f" [{vid}]"
+    max_title_len = 80
+    if os.name == "nt":
+        # Keep directory path <= 240 chars so directory creation and files stay < 260
+        budget = 240 - len(str(parent_dir)) - 1 - len(prefix) - len(suffix)
+        max_title_len = max(10, min(80, budget))
+    safe_title = sanitize_name(title, max_len=max_title_len, fallback=vid)
+    return f"{prefix}{safe_title}{suffix}"
 
 
 def ensure_yt_dlp() -> str:
@@ -140,7 +155,13 @@ def run_yt_dlp_json(
         cmd.extend(auth_args)
     cmd.append(url)
 
-    proc = subprocess.run(cmd, capture_output=True, text=True)
+    proc = subprocess.run(
+        cmd,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+    )
     stdout = proc.stdout.strip()
     if not stdout:
         return None, proc.stderr.strip()
@@ -415,7 +436,7 @@ def select_subtitle_tracks(
     return list(selected.values())
 
 
-def http_get_text(url: str, retries: int = 3) -> str:
+def http_get_text(url: str, retries: int = 5) -> str:
     """Download text from a URL with retry & exponential backoff on 429/5xx."""
     last_err: Exception | None = None
     for attempt in range(retries):
@@ -426,7 +447,7 @@ def http_get_text(url: str, retries: int = 3) -> str:
         except urllib.error.HTTPError as e:
             last_err = e
             if e.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
-                time.sleep(2 ** (attempt + 1))
+                time.sleep(min(20, 2 ** (attempt + 1)))
                 continue
             raise
         except Exception as e:
@@ -664,6 +685,11 @@ def load_cached_bundle_from_disk(video_dir: Path) -> VideoTranscriptBundle | Non
         return None
     if info.get("error"):
         return None
+    if not info.get("has_transcript") and any(
+        isinstance(v, dict) and "error" in v
+        for v in (info.get("languages") or {}).values()
+    ):
+        return None
 
     bundle = VideoTranscriptBundle(
         video_id=info.get("video_id", ""),
@@ -776,60 +802,49 @@ def crawl_channel(args: argparse.Namespace) -> Path:
             playlist_video_ids.add(v["id"])
     print(f"      Tìm thấy {len(playlists)} playlist ({len(playlist_video_ids)} video unique).")
 
-    tabs = ["videos"]
-    if args.include_shorts:
-        tabs.append("shorts")
-    if args.include_streams:
-        tabs.append("streams")
+    if args.playlists_only:
+        print("[3/4] Bỏ qua quét video ngoài playlist (--playlists-only).")
+        other_videos: list[dict[str, Any]] = []
+    else:
+        tabs = ["videos"]
+        if args.include_shorts:
+            tabs.append("shorts")
+        if args.include_streams:
+            tabs.append("streams")
 
-    print(f"[3/4] Đang quét các video ngoài playlist ({', '.join(tabs)})...")
-    tab_videos = fetch_channel_tab_videos(
-        canonical_base, tabs=tabs, video_limit=args.limit, auth_args=auth_args
-    )
-    other_videos = [v for v in tab_videos if v["id"] not in playlist_video_ids]
-    print(
-        f"      Tổng video trên tab: {len(tab_videos)} | "
-        f"Thuộc mục other/: {len(other_videos)}"
-    )
+        print(f"[3/4] Đang quét các video ngoài playlist ({', '.join(tabs)})...")
+        tab_videos = fetch_channel_tab_videos(
+            canonical_base, tabs=tabs, video_limit=args.limit, auth_args=auth_args
+        )
+        other_videos = [v for v in tab_videos if v["id"] not in playlist_video_ids]
+        print(
+            f"      Tổng video trên tab: {len(tab_videos)} | "
+            f"Thuộc mục other/: {len(other_videos)}"
+        )
 
     existing_dirs = {} if args.force else index_existing_videos(channel_dir)
     cache: dict[str, VideoTranscriptBundle] = {}
 
-    def get_bundle(video_entry: dict[str, Any], label: str) -> VideoTranscriptBundle:
-        vid = video_entry["id"]
-        if vid in cache:
-            print(f"      [cache] {label}")
-            return cache[vid]
-
-        if not args.force and vid in existing_dirs:
-            cached_disk = load_cached_bundle_from_disk(existing_dirs[vid])
-            if cached_disk is not None:
-                print(f"      [skip-existing] {label}")
-                cache[vid] = cached_disk
-                return cached_disk
-
-        print(f"      [fetch] {label}")
-        bundle = download_video_transcripts(
-            video_entry=video_entry,
-            requested_langs=requested_langs,
-            with_timestamps=args.timestamps,
-            save_srt=args.srt,
-            auth_args=auth_args,
-        )
-        cache[vid] = bundle
-        if args.sleep > 0:
-            time.sleep(args.sleep)
-        return bundle
-
     print("[4/4] Đang tải và xuất transcript...")
     used_playlist_names: set[str] = set()
     playlist_summary: list[dict[str, Any]] = []
+    placements_by_vid: dict[str, list[tuple[Path, dict[str, Any]]]] = {}
+    unique_videos: dict[str, dict[str, Any]] = {}
 
     for pl_idx, pl in enumerate(playlists, start=1):
         base_pl_name = sanitize_name(pl["title"], max_len=80, fallback=f"playlist_{pl_idx}")
         pl_folder_name = base_pl_name
         if pl_folder_name.lower() in used_playlist_names:
-            pl_folder_name = f"{base_pl_name} [{pl['id']}]"
+            pl_id_suffix = f" [{pl['id']}]"
+            if os.name == "nt":
+                short_base = sanitize_name(
+                    pl["title"],
+                    max_len=max(20, 72 - len(pl_id_suffix)),
+                    fallback=f"playlist_{pl_idx}",
+                )
+                pl_folder_name = f"{short_base}{pl_id_suffix}"
+            else:
+                pl_folder_name = f"{base_pl_name}{pl_id_suffix}"
         used_playlist_names.add(pl_folder_name.lower())
 
         pl_dir = playlists_root / pl_folder_name
@@ -848,14 +863,12 @@ def crawl_channel(args: argparse.Namespace) -> Path:
             encoding="utf-8",
         )
 
-        print(f"\n  Playlist ({pl_idx}/{len(playlists)}): {pl['title']} ({len(pl['videos'])} video)")
         for v_idx, video in enumerate(pl["videos"], start=1):
-            v_folder = f"{v_idx:03d} - {sanitize_name(video['title'], max_len=80)} [{video['id']}]"
-            bundle = get_bundle(video, f"{v_idx}/{len(pl['videos'])} {video['title'][:60]}")
-            write_video_folder(
-                pl_dir / v_folder,
-                bundle,
-                extra_meta={"playlist": pl["title"], "playlist_id": pl["id"]},
+            vid = video["id"]
+            v_folder = make_video_folder_name(pl_dir, v_idx, video["title"], vid)
+            unique_videos.setdefault(vid, video)
+            placements_by_vid.setdefault(vid, []).append(
+                (pl_dir / v_folder, {"playlist": pl["title"], "playlist_id": pl["id"]})
             )
 
         playlist_summary.append(
@@ -867,15 +880,75 @@ def crawl_channel(args: argparse.Namespace) -> Path:
             }
         )
 
-    print(f"\n  Other ({len(other_videos)} video)")
     for v_idx, video in enumerate(other_videos, start=1):
-        v_folder = f"{v_idx:03d} - {sanitize_name(video['title'], max_len=80)} [{video['id']}]"
-        bundle = get_bundle(video, f"{v_idx}/{len(other_videos)} {video['title'][:60]}")
-        write_video_folder(
-            other_root / v_folder,
-            bundle,
-            extra_meta={"playlist": None, "tab": video.get("tab", "videos")},
+        vid = video["id"]
+        v_folder = make_video_folder_name(other_root, v_idx, video["title"], vid)
+        unique_videos.setdefault(vid, video)
+        placements_by_vid.setdefault(vid, []).append(
+            (other_root / v_folder, {"playlist": None, "tab": video.get("tab", "videos")})
         )
+
+    skipped_count = 0
+    to_fetch: list[dict[str, Any]] = []
+    for vid, video in unique_videos.items():
+        if not args.force and vid in existing_dirs:
+            cached_disk = load_cached_bundle_from_disk(existing_dirs[vid])
+            if cached_disk is not None:
+                cache[vid] = cached_disk
+                for target_dir, extra_meta in placements_by_vid[vid]:
+                    write_video_folder(target_dir, cached_disk, extra_meta=extra_meta)
+                skipped_count += 1
+                continue
+        to_fetch.append(video)
+
+    workers = max(1, args.workers)
+    total_to_fetch = len(to_fetch)
+    print(
+        f"      Tổng video unique: {len(unique_videos)} | "
+        f"Bỏ qua đã có: {skipped_count} | "
+        f"Cần tải: {total_to_fetch} (workers={workers})"
+    )
+
+    cache_lock = threading.Lock()
+    done_count = 0
+
+    def fetch_and_persist(video_entry: dict[str, Any]) -> None:
+        nonlocal done_count
+        vid = video_entry["id"]
+        bundle = download_video_transcripts(
+            video_entry=video_entry,
+            requested_langs=requested_langs,
+            with_timestamps=args.timestamps,
+            save_srt=args.srt,
+            auth_args=auth_args,
+        )
+        for target_dir, extra_meta in placements_by_vid[vid]:
+            write_video_folder(target_dir, bundle, extra_meta=extra_meta)
+
+        has_txt = any("txt" in t for t in bundle.transcripts.values())
+        status = "ok" if has_txt else ("err" if bundle.error else "no-sub")
+        with cache_lock:
+            cache[vid] = bundle
+            done_count += 1
+            current = done_count
+            print(
+                f"      [{current}/{total_to_fetch}] [{status}] "
+                f"{video_entry['title'][:60]} ({vid})",
+                flush=True,
+            )
+
+        if args.sleep > 0:
+            time.sleep(args.sleep)
+
+    if total_to_fetch > 0:
+        if workers == 1:
+            for video in to_fetch:
+                fetch_and_persist(video)
+        else:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
+                futures = [executor.submit(fetch_and_persist, video) for video in to_fetch]
+                for fut in concurrent.futures.as_completed(futures):
+                    fut.result()
 
     channel_info = {
         "channel": channel_name,
@@ -952,6 +1025,17 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Xuất thêm file phụ đề .srt bên cạnh .txt",
     )
     parser.add_argument(
+        "--playlists-only",
+        action="store_true",
+        help="Chỉ quét các playlists, bỏ qua bước quét video ngoài playlist (other/)",
+    )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=1,
+        help="Số luồng tải đồng thời khi lấy transcript (mặc định: 1)",
+    )
+    parser.add_argument(
         "--force",
         action="store_true",
         help="Tải lại kể cả các video đã có sẵn trong thư mục kênh",
@@ -965,6 +1049,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 
 def main() -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     try:
         args = parse_args()
         args = prompt_if_interactive(args)

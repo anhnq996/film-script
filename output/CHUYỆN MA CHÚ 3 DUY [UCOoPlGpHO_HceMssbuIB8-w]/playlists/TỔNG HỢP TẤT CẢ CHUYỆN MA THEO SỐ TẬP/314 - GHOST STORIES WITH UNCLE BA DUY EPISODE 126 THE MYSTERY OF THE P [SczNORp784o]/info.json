@@ -1,0 +1,33 @@
+{
+  "video_id": "SczNORp784o",
+  "title": "CHUYỆN MA CHÚ 3 DUY | TẬP 126: ÁO BÀ BA MÀU TÍM",
+  "url": "https://www.youtube.com/watch?v=SczNORp784o",
+  "duration": 1590,
+  "upload_date": "20220823",
+  "channel": "CHUYỆN MA CHÚ 3 DUY",
+  "channel_id": "UCOoPlGpHO_HceMssbuIB8-w",
+  "has_transcript": true,
+  "languages": {
+    "en": {
+      "name": "English (Original)",
+      "source": "auto",
+      "cue_count": 650,
+      "file": "en.txt"
+    },
+    "en-US": {
+      "name": "English (United States) (Original)",
+      "source": "auto",
+      "cue_count": 667,
+      "file": "en-US.txt"
+    },
+    "vi": {
+      "name": "Vietnamese (Original)",
+      "source": "auto",
+      "cue_count": 655,
+      "file": "vi.txt"
+    }
+  },
+  "error": null,
+  "playlist": "TỔNG HỢP TẤT CẢ CHUYỆN MA THEO SỐ TẬP",
+  "playlist_id": "PLsr-60wXxJn7Uf1U1nRT4S22YSc24Kvwt"
+}

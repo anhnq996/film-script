@@ -1,0 +1,27 @@
+{
+  "video_id": "KaFODEGTDYA",
+  "title": "CHUYỆN MA CHÚ 3 DUY | TẬP 262: MÈO TINH ĂN XÁC SỐNG",
+  "url": "https://www.youtube.com/watch?v=KaFODEGTDYA",
+  "duration": 2682,
+  "upload_date": "20230602",
+  "channel": "CHUYỆN MA CHÚ 3 DUY",
+  "channel_id": "UCOoPlGpHO_HceMssbuIB8-w",
+  "has_transcript": true,
+  "languages": {
+    "en-US": {
+      "name": "English (United States) (Original)",
+      "source": "auto",
+      "cue_count": 1150,
+      "file": "en-US.txt"
+    },
+    "vi": {
+      "name": "Vietnamese (Original)",
+      "source": "auto",
+      "cue_count": 1089,
+      "file": "vi.txt"
+    }
+  },
+  "error": null,
+  "playlist": "TỔNG HỢP TẤT CẢ CHUYỆN MA THEO SỐ TẬP",
+  "playlist_id": "PLsr-60wXxJn7Uf1U1nRT4S22YSc24Kvwt"
+}

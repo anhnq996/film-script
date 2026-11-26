@@ -1,0 +1,27 @@
+{
+  "video_id": "R5zOUjKMhQg",
+  "title": "CHUYỆN MA CHÚ 3 DUY | TẬP 320: NGỰA BA CHÂN - BÚP BÊ MỘT MẮT",
+  "url": "https://www.youtube.com/watch?v=R5zOUjKMhQg",
+  "duration": 2706,
+  "upload_date": "20231005",
+  "channel": "CHUYỆN MA CHÚ 3 DUY",
+  "channel_id": "UCOoPlGpHO_HceMssbuIB8-w",
+  "has_transcript": true,
+  "languages": {
+    "en-US": {
+      "name": "English (United States) (Original)",
+      "source": "auto",
+      "cue_count": 1354,
+      "file": "en-US.txt"
+    },
+    "vi": {
+      "name": "Vietnamese (Original)",
+      "source": "auto",
+      "cue_count": 1144,
+      "file": "vi.txt"
+    }
+  },
+  "error": null,
+  "playlist": "TỔNG HỢP TẤT CẢ CHUYỆN MA THEO SỐ TẬP",
+  "playlist_id": "PLsr-60wXxJn7Uf1U1nRT4S22YSc24Kvwt"
+}

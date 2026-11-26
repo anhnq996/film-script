@@ -1,0 +1,27 @@
+{
+  "video_id": "IaHEYWSkFyA",
+  "title": "CHUYỆN MA CHÚ 3 DUY | TẬP 441: MÁU HẬN TÌNH THÙ | PHẦN CUỐI: TỬ NGHIỆP",
+  "url": "https://www.youtube.com/watch?v=IaHEYWSkFyA",
+  "duration": 3473,
+  "upload_date": "20240905",
+  "channel": "CHUYỆN MA CHÚ 3 DUY",
+  "channel_id": "UCOoPlGpHO_HceMssbuIB8-w",
+  "has_transcript": true,
+  "languages": {
+    "en": {
+      "name": "English (Original)",
+      "source": "auto",
+      "cue_count": 1701,
+      "file": "en.txt"
+    },
+    "vi": {
+      "name": "Vietnamese (Original)",
+      "source": "auto",
+      "cue_count": 1600,
+      "file": "vi.txt"
+    }
+  },
+  "error": null,
+  "playlist": "MÁU HẬN TÌNH THÙ",
+  "playlist_id": "PLsr-60wXxJn53KxwPb-h4emgBYKPxmybM"
+}
